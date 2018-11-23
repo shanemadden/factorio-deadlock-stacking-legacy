@@ -1,0 +1,11 @@
+{
+	"name": "DeadlockStacking",
+	"version": "1.6.3",
+	"title": "Deadlock's Stacking Beltboxes",
+	"author": "Deadlock989",
+	"contact": "",
+    "homepage": "https://forums.factorio.com/viewtopic.php?f=94&t=57264",
+	"dependencies": ["base >= 0.16.51", "?xander-mod", "?boblogistics >= 0.16.22", "?FactorioExtended-Transport", "?Regroup", "?ReStack"],
+	"description": "Adds 5x belt compression for ores, plates and some intermediate products.",
+	"factorio_version": "0.16"
+}

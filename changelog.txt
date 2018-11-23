@@ -1,0 +1,226 @@
+---------------------------------------------------------------------------------------------------
+Version: 1.6.3
+Date: 18. 06. 2018
+  Changes:
+    - Updated the stacked battery icon to match the new vanilla battery.
+    - Factorio base 0.16.51 stable is required.
+---------------------------------------------------------------------------------------------------
+Version: 1.6.2
+Date: 15. 05. 2018
+  Bugfixes:
+    - Corrected the main internal call to stacked item recipe gen for vanilla items, which unintentionally used an uninitialised global variable for reasons lost in the mists of time.
+    - Corrected a typo in a variable name while sanity checking for a rare situation (unusual icon size).
+---------------------------------------------------------------------------------------------------
+Version: 1.6.1
+Date: 10. 05. 2018
+  Bugfixes:
+    - Fixed an issue when updating technologies with modded vanilla items, where a recipe tech unlock could be duplicated.
+---------------------------------------------------------------------------------------------------
+Version: 1.6.0
+Date: 08. 05. 2018
+  Changes:
+    - Final "definitive" version for Factorio 0.16.
+---------------------------------------------------------------------------------------------------
+Version: 1.5.5
+Date: 06. 05. 2018
+  Inter-mod support:
+    - Factorio base 0.16.36 (0.16 stable) is now the minimum requirement.
+    - For Bob's Logistics support, Bob's Logistics 0.16.22 is now the minimum requirement.
+---------------------------------------------------------------------------------------------------
+Version: 1.5.4
+Date: 04. 05. 2018
+  Changes:
+    - The map/minimap colour for beltboxes now defaults to the same as any other vanilla machine entity (dull blue).
+    - Maps in existing save games won't update until the chunk is re-charted (by radar, by building in the chunk, or with the command).
+    - Tiered map colours are now handled by the companion mod, Deadlock's Compact Loaders.
+---------------------------------------------------------------------------------------------------
+Version: 1.5.3
+Date: 04. 04. 2018
+  Changes:
+    - Removed logging options, because clutter. Modders: if you need these, you'll have to edit the debug value in shared.lua.
+  Inter-mod support:
+    - Factorio-Extended-Plus (a fork of Factorio-Extended) is now supported.
+  Bugfixes:
+    - A Xander Mod beltbox had the wrong tech prerequisite. 
+---------------------------------------------------------------------------------------------------
+Version: 1.5.2
+Date: 30. 03. 2018
+  Changes:
+    - Stacking/unstacking activities are no longer included in production statistics.
+    - This can't be a retroactive change so you will still see beltbox production stats in the past.
+    - Swapped Bob's Logistics tier colours around. BL 0.16.17 is now required.
+    - Added per-mod localised names.
+---------------------------------------------------------------------------------------------------
+Version: 1.5.1
+Date: 28. 03. 2018
+  Bugfixes:
+    - Copy-paste derp, which only affected "helper" mods.
+---------------------------------------------------------------------------------------------------
+Version: 1.5.0
+Date: 28. 03. 2018
+  Changes:
+    - Made the internal structure of the mod properly modular, reducing variable/function scope.
+---------------------------------------------------------------------------------------------------
+Version: 1.4.11
+Date: 26. 03. 2018
+  Changes:
+    - Added Regroup as an optional dependency, just to force loading order.
+    - Rebalanced energy and pollution. Beltboxes are consistently cleanest at the top tier and dirtiest at the lowest tier.
+  Bugfixes:
+    - Tier 4 and 5 beltboxes were cleaning the air.
+---------------------------------------------------------------------------------------------------
+Version: 1.4.10
+Date: 24. 03. 2018
+  Bugfixes:
+    - Global function derp.
+---------------------------------------------------------------------------------------------------
+Version: 1.4.9
+Date: 24. 03. 2018
+  Changes:
+    - Shrunk beltbox collision boxes, by popular request.
+    - There is now an option in mod settings to hide the "hand-unstacking" recipes, if you don't want to use them and the clutter bothers you.
+  Inter-mod support:
+    - Items from other mods with icon sizes of 64 and 128 are now supported. See modding readme. 
+    - Beltboxes now base their crafting speed on the speed of their corresponding belts, instead of assuming integer multiples of vanilla speeds.
+    - Hand-unstacking recipes now appear at the bottom of the same crafting tab as their corresponding base item (if not hidden by mod settings) instead of defaulting to Intermediate Products.
+    - Added a verbose logging option to mod settings so you can see what DSB is doing with your itamz.
+    - Added support for Xander Mod tier 4.
+---------------------------------------------------------------------------------------------------
+Version: 1.4.8
+Date: 13. 03. 2018
+  Inter-mod support:
+    - Stacked items now inherit fuel_emissions_multiplier if another mod added it.
+---------------------------------------------------------------------------------------------------
+Version: 1.4.7
+Date: 04. 03. 2018
+  Inter-mod support:
+    - Added two new functions for modders.
+    - deadlock_crating.remove(string) will search DSB's native technologies for any recipe unlocks with a matching substring and remove them.
+    - deadlock_stacking.reset() will clear all stacking recipes from all DSB technologies, leaving only the machine unlocks.
+    - See the modding readme for more details.
+  Bugfixes:
+    - Addressed a global variable pollution issue.
+---------------------------------------------------------------------------------------------------
+Version: 1.4.6
+Date: 18. 02. 2018
+  Inter-mod support:
+    - Items from other mods that have layered/masked icons and no custom stack icon specified now get a stack icon generated automatically like non-layered icons do, but warnings will be left in the game log discouraging this.
+    - Mod readme updated.
+---------------------------------------------------------------------------------------------------
+Version: 1.4.5
+Date: 17. 02. 2018
+  Inter-mod support:
+    - If a technology already specifies unlock effects for a stacked item, those effects are replaced instead of duplicated.
+---------------------------------------------------------------------------------------------------
+Version: 1.4.4
+Date: 12. 02. 2018
+  Changes:
+    - Final, final graphics pass.
+---------------------------------------------------------------------------------------------------
+Version: 1.4.3
+Date: 11. 02. 2018
+  Changes:
+    - German localisation added.
+---------------------------------------------------------------------------------------------------
+Version: 1.4.2
+Date: 11. 02. 2018
+  Changes:
+    - Reverted weathering effect on textures. This isn't Etsy.
+    - Updated low-res textures.
+    - Updated technology icon.
+  Bugfixes:
+    - Fixed a technology copy-paste derp for tier 4 and 5 beltboxes.
+---------------------------------------------------------------------------------------------------
+Version: 1.4.1
+Date: 10. 02. 2018
+  Changes:
+    - Tweak to tier colours and metal textures, to match vanilla palette more closely.
+---------------------------------------------------------------------------------------------------
+Version: 1.4.0
+Date: 10. 02. 2018
+  Changes:
+    - Graphics rebuilt from scratch using Blender for a clean, original look.
+---------------------------------------------------------------------------------------------------
+Version: 1.3.1
+Date: 06. 02. 2018
+  Bugfixes:
+    - Global variable derp.
+---------------------------------------------------------------------------------------------------
+Version: 1.3.0
+Date: 06. 02. 2018
+  Changes:
+    - Beltbox sprites and icons reworked. They are now separated into layers and masks, saving VRAM and allowing for any dynamic colour without needing new sprites.
+    - Tier 4 and 5 beltboxes become available if Factorio Extended (Transport) is active (and if you can get it to load).
+---------------------------------------------------------------------------------------------------
+Version: 1.2.2
+Date: 04. 02. 2018
+  Changes:
+    - Sprite shadows tweak.
+  Bugfixes:
+    - Tightened checks and error handling around calls from other mods.
+---------------------------------------------------------------------------------------------------
+Version: 1.2.1
+Date: 04. 02. 2018
+  Changes:
+    - Sprites updated. Lines up with Deadlock's Compact Loaders. Shadows separated. Low-res version improved.
+  Bugfixes:
+    - Check other mods' settings properly.
+---------------------------------------------------------------------------------------------------
+Version: 1.2.0
+Date: 03. 02. 2018
+  Inter-mod support:
+    - An easy way for modders to make their items stackable has been provided. See the readme pdf inside the zip.
+    - Tier 4 and 5 beltbox technologies are available if Bob's Logistics is active. The research costs are whack because Bob's Logistics costs are whack.
+  Changes:
+    - Manual unstacking was re-enabled for players (requires Factorio >= 0.16.22).
+    - Uranium ore/235/238 and batteries added to research tier 3.
+    - Iron sticks and sulfur added to research tier 2.
+    - Green and red circuits moved from tier 3 to tier 2.
+    - Some icons refreshed and much code tidying.
+---------------------------------------------------------------------------------------------------
+Version: 1.1.0
+Date: 31. 01. 2018
+  Changes:
+    - Beltboxes now stack 5 items instead of 4. For reasons.
+    - Belt compression has therefore increased to 5x, but inventory density stays the same.
+    - Logs, iron ore, copper ore, stone, and coal can now be stacked at tier 1, solid fuel at tier 2.
+    - Stacked items inherit fuel values. Supercoal, hayo.
+    - Stacked icons/sprites can be generated automatically from base items if no FPS-saving custom sprite exists (mainly for future mod support).
+    - Stacking recipes hidden from the player crafting menu (but not from filters).
+    - Migration: technology check.
+    - Item and recipe init deferred, to try and catch stack size changes from other mods.
+    - Stacked item stack sizes are rounded down if another mod is caught changing vanilla stacks to a non-multiple of 5.
+    - ReStack added as an optional dependency because it insists on making very late changes to vanilla items.
+---------------------------------------------------------------------------------------------------
+Version: 1.0.1
+Date: 29. 01. 2018
+  Bugfixes:
+    - Player hand-unstacking was disabled as it interferes with some vanilla recipes.
+---------------------------------------------------------------------------------------------------
+Version: 1.0.0
+Date: 29. 01. 2018
+  Changes:
+    - Stable version. No further big changes to be made.
+    - Beltboxes still have no room for modules, but they will receive efficiency effects.
+  Bugfixes:
+    - Beltbox health was set too low.
+---------------------------------------------------------------------------------------------------
+Version: 0.0.3
+Date: 29. 01. 2018
+  Changes:
+    - Beltbox animation now has a propeller. Because propellers.
+    - Beltbox sound effect added.
+    - Beltbox power consumption and pollution rebalanced.
+---------------------------------------------------------------------------------------------------
+Version: 0.0.2
+Date: 28. 01. 2018
+  Changes:
+    - Beltbox power consumption tweaked upwards, to be more in proportion to the typical throughput/kW of assemblers of the same tier.
+    - Icons tweaked for contrast, easier now to tell them apart from unstacked items on belts.
+  Trivia:
+    - Assembler 2s are quite power-inefficient compared to Assembler 3s and Assembler 1s.
+---------------------------------------------------------------------------------------------------
+Version: 0.0.1
+Date: 28. 01. 2018
+  Changes:
+    - Initial release.
