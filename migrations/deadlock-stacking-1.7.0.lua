@@ -47,7 +47,7 @@ elseif game.active_mods["FactorioExtended-Transport"] then
 	recipe_mapping["deadlock-beltbox-recipe-5"] = "furious-transport-belt-beltbox"
 end
 
-local inventory_types = {
+local all_inventory_types = {
 	defines.inventory.fuel,
 	defines.inventory.burnt_result,
 	defines.inventory.chest,
@@ -85,6 +85,14 @@ local inventory_types = {
 	defines.inventory.beacon_modules,
 	defines.inventory.character_corpse,
 }
+local types_added = {}
+local inventory_types = {}
+for _, inventory_type in ipairs(all_inventory_types) do
+	if not types_added[inventory_type] then
+		types_added[inventory_type] = true
+		table.insert(inventory_types, inventory_type)
+	end
+end
 
 local function scan_blueprint(blueprint)
 	local blueprint_entities = blueprint.get_blueprint_entities()
@@ -256,7 +264,7 @@ for _, surface in pairs(game.surfaces) do
 
 		-- assembler recipes
 		if entity.type == "assembling-machine" then
-			if recipe_mapping[entity.get_recipe().name] then
+			if entity.get_recipe() and recipe_mapping[entity.get_recipe().name] then
 				entity.set_recipe(recipe_mapping[entity.get_recipe().name])
 			end
 		end
