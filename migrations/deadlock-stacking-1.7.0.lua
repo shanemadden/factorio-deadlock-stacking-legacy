@@ -47,47 +47,12 @@ elseif game.active_mods["FactorioExtended-Transport"] then
 	recipe_mapping["deadlock-beltbox-recipe-5"] = "furious-transport-belt-beltbox"
 end
 
-local all_inventory_types = {
-	defines.inventory.fuel,
-	defines.inventory.burnt_result,
-	defines.inventory.chest,
-	defines.inventory.furnace_source,
-	defines.inventory.furnace_result,
-	defines.inventory.furnace_modules,
-	defines.inventory.player_quickbar,
-	defines.inventory.player_main,
-	defines.inventory.player_guns,
-	defines.inventory.player_ammo,
-	defines.inventory.player_armor,
-	defines.inventory.player_tools,
-	defines.inventory.player_vehicle,
-	defines.inventory.player_trash,
-	defines.inventory.god_quickbar,
-	defines.inventory.god_main,
-	defines.inventory.roboport_robot,
-	defines.inventory.roboport_material,
-	defines.inventory.robot_cargo,
-	defines.inventory.robot_repair,
-	defines.inventory.assembling_machine_input,
-	defines.inventory.assembling_machine_output,
-	defines.inventory.assembling_machine_modules,
-	defines.inventory.lab_input,
-	defines.inventory.lab_modules,
-	defines.inventory.mining_drill_modules,
-	defines.inventory.item_main,
-	defines.inventory.rocket_silo_rocket,
-	defines.inventory.rocket_silo_result,
-	defines.inventory.rocket,
-	defines.inventory.car_trunk,
-	defines.inventory.car_ammo,
-	defines.inventory.cargo_wagon,
-	defines.inventory.turret_ammo,
-	defines.inventory.beacon_modules,
-	defines.inventory.character_corpse,
-}
+local item_count = 0
+local entity_count = 0
+
 local types_added = {}
 local inventory_types = {}
-for _, inventory_type in ipairs(all_inventory_types) do
+for _, inventory_type in pairs(defines.inventory) do
 	if not types_added[inventory_type] then
 		types_added[inventory_type] = true
 		table.insert(inventory_types, inventory_type)
@@ -122,6 +87,7 @@ local function check_item(stack)
 			scan_inventory(stack.get_inventory(defines.inventory.item_main))
 		elseif item_mapping[stack.name] then
 			-- replace it
+			item_count = item_count + 1
 			stack.set_stack({
 				name = item_mapping[stack.name],
 				count = stack.count,
@@ -319,6 +285,7 @@ for _, surface in pairs(game.surfaces) do
 		else
 			-- one of our entities? fast replace it
 			if entity_mapping[entity.name] then
+				entity_count = entity_count + 1
 				local entity_table = {
 					name = entity_mapping[entity.name],
 					position = entity.position,
@@ -371,3 +338,4 @@ for _, force in pairs(game.forces) do
 		end
 	end
 end
+game.print({"info-message.dsb-dbl-migration", item_count, entity_count},{r=1,g=0.75,b=0,a=1})

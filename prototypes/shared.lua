@@ -246,28 +246,30 @@ function DSB.create_stacking_recipes(item_name, icon_size)
 		}
 	)
 	-- stacking
-	data:extend({
-		{
-		type = "recipe",
-		name = DSB.RECIPE_PREFIX.."stack-"..item_name,
-		localised_name = {"recipe-name.deadlock-stacking-stack", {"item-name."..item_name}},
-		category = "stacking",
-		group = "intermediate-products",
-		subgroup = data.raw.item[DSB.ITEM_PREFIX..item_name].subgroup,
-		order = menu_order.."[a]",
-		enabled = false,
-		allow_decomposition = false,
-		ingredients = { {item_name, DSB.STACK_SIZE} },
-		result = DSB.ITEM_PREFIX..item_name,
-		result_count = 1,
-		energy_required = DSB.CRAFT_TIME,
-		icons = temp_icons,
-        icon_size = icon_size, 
-		hidden = true,
-		allow_as_intermediate = false,
-        hide_from_stats = true,
-		},
-	})
+	if not data.raw.recipe[DSB.RECIPE_PREFIX.."stack-"..item_name] then
+		data:extend({
+			{
+			type = "recipe",
+			name = DSB.RECIPE_PREFIX.."stack-"..item_name,
+			localised_name = {"recipe-name.deadlock-stacking-stack", {"item-name."..item_name}},
+			category = "stacking",
+			group = "intermediate-products",
+			subgroup = data.raw.item[DSB.ITEM_PREFIX..item_name].subgroup,
+			order = menu_order.."[a]",
+			enabled = false,
+			allow_decomposition = false,
+			ingredients = { {item_name, DSB.STACK_SIZE} },
+			result = DSB.ITEM_PREFIX..item_name,
+			result_count = 1,
+			energy_required = DSB.CRAFT_TIME,
+			icons = temp_icons,
+	        icon_size = icon_size, 
+			hidden = true,
+			allow_as_intermediate = false,
+	        hide_from_stats = true,
+			},
+		})
+	end
 	-- unstacking
 	temp_icons = table.deepcopy(base_icons)
 	table.insert(temp_icons, 
@@ -276,29 +278,31 @@ function DSB.create_stacking_recipes(item_name, icon_size)
             scale = 0.5 * 32 / icon_size
 		}
 	)
-    local hidden = settings.startup["deadlock-stacking-hide-unstacking"].value
-	data:extend({
-		{
-		type = "recipe",
-		name = DSB.RECIPE_PREFIX.."unstack-"..item_name,
-		localised_name = {"recipe-name.deadlock-stacking-unstack", {"item-name."..item_name}},
-		category = "unstacking",
-		group = "intermediate-products",
-		subgroup = data.raw.item[DSB.ITEM_PREFIX..item_name].subgroup,
-		order = menu_order.."[b]",
-		enabled = false,
-		allow_decomposition = false,
-		ingredients = { {DSB.ITEM_PREFIX..item_name, 1} },
-		result = item_name,
-		result_count = DSB.STACK_SIZE,
-		energy_required = DSB.CRAFT_TIME,
-		icons = temp_icons,
-        icon_size = icon_size, 
-		hidden = hidden,
-		allow_as_intermediate = false,
-        hide_from_stats = true,
-		},
-	})
+	if not data.raw.recipe[DSB.RECIPE_PREFIX.."unstack-"..item_name] then
+	    local hidden = settings.startup["deadlock-stacking-hide-unstacking"].value
+		data:extend({
+			{
+			type = "recipe",
+			name = DSB.RECIPE_PREFIX.."unstack-"..item_name,
+			localised_name = {"recipe-name.deadlock-stacking-unstack", {"item-name."..item_name}},
+			category = "unstacking",
+			group = "intermediate-products",
+			subgroup = data.raw.item[DSB.ITEM_PREFIX..item_name].subgroup,
+			order = menu_order.."[b]",
+			enabled = false,
+			allow_decomposition = false,
+			ingredients = { {DSB.ITEM_PREFIX..item_name, 1} },
+			result = item_name,
+			result_count = DSB.STACK_SIZE,
+			energy_required = DSB.CRAFT_TIME,
+			icons = temp_icons,
+	        icon_size = icon_size, 
+			hidden = hidden,
+			allow_as_intermediate = false,
+	        hide_from_stats = true,
+			},
+		})
+	end
 	DSB.debug("DSB: Created recipes: "..item_name)
 end
 
