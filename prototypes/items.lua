@@ -14,7 +14,7 @@ for i=1,DSB.TIERS do
 			},
 			icon_size = 32,
 			stack_size = 50,
-			flags = { "goes-to-quickbar" },
+			flags = {},
 			place_result = "deadlock-beltbox-entity-"..i,
 			group = "logistics",
 			subgroup = "beltboxes",

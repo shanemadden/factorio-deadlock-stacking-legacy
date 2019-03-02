@@ -174,8 +174,10 @@ local function check_control_behavior(cb)
 end
 local function check_transport_line(tl)
 	for i = 1, #tl do
-		local stack = tl[i]
-		check_item(stack)
+		if i <= 256 then
+			local stack = tl[i]
+			check_item(stack)
+		end
 	end
 end
 

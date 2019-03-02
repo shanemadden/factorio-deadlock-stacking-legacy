@@ -1,11 +1,11 @@
 {
 	"name": "DeadlockStacking",
-	"version": "1.7.1",
+	"version": "1.7.2",
 	"title": "Deadlock's Stacking Beltboxes",
 	"author": "Deadlock989",
 	"contact": "",
     "homepage": "https://forums.factorio.com/viewtopic.php?f=94&t=57264",
-	"dependencies": ["base >= 0.16.51", "deadlock-beltboxes-loaders", "?deadlock-integrations", "?xander-mod", "?boblogistics >= 0.16.22", "?FactorioExtended-Transport", "?Regroup", "?ReStack"],
+	"dependencies": ["base >= 0.17", "deadlock-beltboxes-loaders", "?deadlock-integrations", "?xander-mod", "?boblogistics >= 0.16.22", "?FactorioExtended-Transport", "?Regroup", "?ReStack"],
 	"description": "Migration mod for combined Deadlock's Stacking Beltboxes & Compact Loaders mod, please download required dependency deadlock-beltboxes-loaders and load any older saves at least once with this migration mod still present.",
-	"factorio_version": "0.16"
+	"factorio_version": "0.17"
 }

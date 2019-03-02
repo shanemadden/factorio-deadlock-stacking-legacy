@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.7.2
+Date: 02. 03. 2019
+  Changes:
+    - Updated for migration to new combined mod, please download the new required dependency deadlock-beltboxes-loaders, as well as deadlock-integrations if you use third-party mod support.
+    - Please see the mod portal for more detailed migration instructions - load the updated version of this migration mod at least once with all saves that have beltboxes or stacked items to avoid losing them!
+---------------------------------------------------------------------------------------------------
 Version: 1.6.3
 Date: 18. 06. 2018
   Changes:

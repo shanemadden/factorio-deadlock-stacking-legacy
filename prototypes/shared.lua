@@ -200,7 +200,7 @@ function DSB.create_stacked_item(item_name, graphic_path, icon_size)
 			icons = stacked_icons,
             icon_size = icon_size, 
 			stack_size = math.floor(data.raw.item[item_name].stack_size/DSB.STACK_SIZE),
-			flags = { "goes-to-main-inventory" },
+			flags = {},
 			subgroup = "stacks-"..DSB.get_group(item_name),
 			order = menu_order,
 			allow_decomposition = false,
