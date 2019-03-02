@@ -3,7 +3,7 @@
 Here's what you need to know for the new version:
 
  - If you're starting a new game, you only need the [new mod](https://mods.factorio.com/mod/deadlock-beltboxes-loaders); if you're using the inter-mod support to add beltboxes for Bob's belts or another mod, also download the separate [integration mod](https://mods.factorio.com/mod/deadlock-integrations).
- - **If you have an existing save with beltboxes**, you should also update to the latest version of this mod (`DeadlockStacking`) and make sure that it's enabled for the first time you load each older save. Starting the game with both mods present will migrate the save to work with the new combined mod - your loaders will disappear if you don't have `DeadlockStacking` enabled during the first load of the save under 0.17!
+ - **If you have an existing save with beltboxes**, you should also update to the latest version of this mod (`DeadlockStacking`) and make sure that it's enabled for the first time you load each older save. Starting the game with both mods present will migrate the save to work with the new combined mod - your beltboxes and stacked items will disappear if you don't have `DeadlockStacking` enabled during the first load of the save under 0.17!
 
 ![beltbox](https://i.imgur.com/31g3wov.gif)
 
