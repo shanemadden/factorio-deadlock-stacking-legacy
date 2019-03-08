@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.7.3
+Date: 08. 03. 2019
+  Bugfixes:
+    - Fix corruption of blueprints in the inventory during the migration process. Cannot fix already-broken blueprints, but if you re-migrate your prior save the fixed ones can be exported and imported.
+---------------------------------------------------------------------------------------------------
 Version: 1.7.2
 Date: 02. 03. 2019
   Changes:

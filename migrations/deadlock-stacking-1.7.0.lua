@@ -67,7 +67,6 @@ local function scan_blueprint(blueprint)
 				entity_table.name = entity_mapping[entity_table.name]
 			end
 		end
-		blueprint.clear_blueprint()
 		blueprint.set_blueprint_entities(blueprint_entities)
 	end
 end
