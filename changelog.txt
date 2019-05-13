@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.7.4
+Date: 13. 05. 2019
+  Changes:
+    - Fix for player -> character rename in 0.17.35
+    - Note: This standalone mod is still only useful for *migration of 0.16 games* - once your saves have been converted, this mod can be disabled
+---------------------------------------------------------------------------------------------------
 Version: 1.7.3
 Date: 08. 03. 2019
   Bugfixes:

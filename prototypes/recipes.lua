@@ -13,7 +13,7 @@ data:extend({
 })
 
 -- as of 0.16.22 we can disallow recipes being used in intermediates and re-allow player unstacking 
-table.insert(data.raw["player"]["player"].crafting_categories,"unstacking")
+table.insert(data.raw["character"]["character"].crafting_categories,"unstacking")
 
 -- crafting tab groups
 data:extend({
